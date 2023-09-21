@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailPc extends StatelessWidget {
+class DetailPc extends StatefulWidget {
   const DetailPc({super.key});
 
+  @override
+  State<DetailPc> createState() => _DetailPcState();
+}
+
+class _DetailPcState extends State<DetailPc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +15,7 @@ class DetailPc extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("PC방"),
+            const Text("피씨"),
             Row(
               children: [
                 IconButton(
@@ -36,7 +41,7 @@ class DetailPc extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: const Center(
-        child: Text("PC방."),
+        child: Text("피씨방입니다."),
       ),
     );
   }

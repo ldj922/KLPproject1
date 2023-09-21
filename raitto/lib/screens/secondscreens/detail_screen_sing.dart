@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailSing extends StatelessWidget {
+class DetailSing extends StatefulWidget {
   const DetailSing({super.key});
 
+  @override
+  State<DetailSing> createState() => _DetailSingState();
+}
+
+class _DetailSingState extends State<DetailSing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +41,7 @@ class DetailSing extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: const Center(
-        child: Text("노래방."),
+        child: Text("노래방입니다."),
       ),
     );
   }

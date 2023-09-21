@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailRestau extends StatelessWidget {
+class DetailRestau extends StatefulWidget {
   const DetailRestau({super.key});
 
+  @override
+  State<DetailRestau> createState() => _DetailRestauState();
+}
+
+class _DetailRestauState extends State<DetailRestau> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

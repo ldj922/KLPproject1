@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailBook extends StatelessWidget {
+class DetailBook extends StatefulWidget {
   const DetailBook({super.key});
 
+  @override
+  State<DetailBook> createState() => _DetailBookState();
+}
+
+class _DetailBookState extends State<DetailBook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +15,7 @@ class DetailBook extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("책방"),
+            const Text("서점"),
             Row(
               children: [
                 IconButton(
@@ -36,7 +41,7 @@ class DetailBook extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: const Center(
-        child: Text("책방입니두."),
+        child: Text("서점입니다."),
       ),
     );
   }

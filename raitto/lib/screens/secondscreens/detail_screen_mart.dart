@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailMart extends StatelessWidget {
+class DetailMart extends StatefulWidget {
   const DetailMart({super.key});
 
+  @override
+  State<DetailMart> createState() => _DetailMartState();
+}
+
+class _DetailMartState extends State<DetailMart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +15,7 @@ class DetailMart extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("편의점/마트"),
+            const Text("마트"),
             Row(
               children: [
                 IconButton(
@@ -36,7 +41,7 @@ class DetailMart extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: const Center(
-        child: Text("마트/편의점."),
+        child: Text("마트입니다."),
       ),
     );
   }

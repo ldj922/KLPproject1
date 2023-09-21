@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:raitto/screens/made_icon.dart';
+import 'package:raitto/screens/searchscreen.dart';
 import 'package:raitto/screens/secondscreens/detail_screen_book.dart';
 import 'package:raitto/screens/secondscreens/detail_screen_cafe.dart';
 import 'package:raitto/screens/secondscreens/detail_screen_gym.dart';
@@ -9,7 +10,7 @@ import 'package:raitto/screens/secondscreens/detail_screen_pc.dart';
 import 'package:raitto/screens/secondscreens/detail_screen_restau.dart';
 import 'package:raitto/screens/secondscreens/detail_screen_sing.dart';
 import 'package:raitto/screens/secondscreens/detail_screen_sool.dart';
-import 'package:raitto/screens/secondscreens/searchscreen.dart';
+/*import 'package:raitto/screens/searchscreen.dart';*/
 
 class HomeScreen extends StatefulWidget {
   //const HomeScreen({super.key});

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailLaund extends StatelessWidget {
+class DetailLaund extends StatefulWidget {
   const DetailLaund({super.key});
 
+  @override
+  State<DetailLaund> createState() => _DetailLaundState();
+}
+
+class _DetailLaundState extends State<DetailLaund> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +15,7 @@ class DetailLaund extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("빨래방"),
+            const Text("빨래"),
             Row(
               children: [
                 IconButton(
@@ -36,7 +41,7 @@ class DetailLaund extends StatelessWidget {
         foregroundColor: Colors.black,
       ),
       body: const Center(
-        child: Text("빨래방."),
+        child: Text("빨래방입니다."),
       ),
     );
   }

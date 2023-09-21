@@ -30,12 +30,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.1.0
-  
+  cached_network_image: ^3.2.3
+  http: ^1.1.0 # cached_network_image 패키지 추가
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  excel: ^2.1.0
 
 dev_dependencies:
   flutter_test:
