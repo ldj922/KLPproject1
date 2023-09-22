@@ -28,11 +28,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/save_store', (req, res) => {
-  const storeName = req.body.store_name;
+  const storeName = req.body.name;
   const category = req.body.category;
-  const phoneNumber = req.body.phone_number;
+  const phoneNumber = req.body.phoneNumber;
   const menu = req.body.menu;
-  const photoUrl = req.body.photo_url;
+  const photoUrl = req.body.photoUrl;
 
   const query = 'INSERT INTO raitto_store(store_name, category, phone_number, menu, photo_url) VALUES($1, $2, $3, $4, $5)';
   const values = [storeName, category, phoneNumber, menu, photoUrl];
