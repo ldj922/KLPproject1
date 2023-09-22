@@ -28,14 +28,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/save_store', (req, res) => {
-  const storeName = req.body.name;
+  const name = req.body.name;
   const category = req.body.category;
   const phoneNumber = req.body.phoneNumber;
   const menu = req.body.menu;
   const photoUrl = req.body.photoUrl;
 
-  const query = 'INSERT INTO raitto_store(name, category, phonNumber, menu, photoUrl) VALUES($1, $2, $3, $4, $5)';
-  const values = [storeName, category, phoneNumber, menu, photoUrl];
+  const query = 'INSERT INTO raitto_store(name, category, phoneNumber, menu, photoUrl) VALUES($1, $2, $3, $4, $5)';
+  const values = [name, category, phoneNumber, menu, photoUrl];
 
   pool.query(query, values, (err) => {
     if (err) {
