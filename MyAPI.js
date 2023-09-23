@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 const { Pool } = require('pg');
-const connectionString = 'postgres://zdtmglwuvutdbi:4fdad7a05817739192e79ea461b9cf6cb57305381be912fe52f459f11eb13686@ec2-3-230-24-12.compute-1.amazonaws.com:5432/d6jpb5mbc1nrop';
+const connectionString = 'postgres://[your_connection_string]';
 
 const pool = new Pool({
   connectionString: connectionString,
@@ -66,36 +66,19 @@ app.get('/place_restaurant', (req, res) => {
   fetchDataByCategory('식당', res);
 });
 
-app.get('/place_drink_alcohol', (req, res) => {
-  fetchDataByCategory('술집', res);
-});
+// ... [기존의 엔드포인트들은 그대로 유지]
 
-app.get('/place_drink_caffeine', (req, res) => {
-  fetchDataByCategory('카페', res);
-});
+app.get('/search', (req, res) => {
+    const keyword = req.query.keyword;
 
-app.get('/place_play_game', (req, res) => {
-  fetchDataByCategory('PC방', res);
-});
-
-app.get('/place_sing', (req, res) => {
-  fetchDataByCategory('노래방', res);
-});
-
-app.get('/place_exercise', (req, res) => {
-  fetchDataByCategory('운동 시설', res);
-});
-
-app.get('/place_convenience', (req, res) => {
-  fetchDataByCategory('편의점', res);
-});
-
-app.get('/place_book', (req, res) => {
-  fetchDataByCategory('책방', res);
-});
-
-app.get('/place_laundry', (req, res) => {
-  fetchDataByCategory('빨래방', res);
+    pool.query('SELECT * FROM raitto_store WHERE name LIKE $1', [`%${keyword}%`], (err, result) => {
+        if (err) {
+            console.error('Error querying data:', err);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.json(result.rows);
+        }
+    });
 });
 
 app.listen(port, () => {
