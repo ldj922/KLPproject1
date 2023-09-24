@@ -35,9 +35,11 @@ app.post('/save_store', (req, res) => {
   const phoneNumber = req.body.phoneNumber;
   const menu = req.body.menu;
   const photoUrl = req.body.photoUrl;
+  const featureOne = req.body.featureOne;
+  const featureTwo = req.body.featureTwo; 
+  const runningTime = req.body.runningTime; 
 
-  const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl") VALUES($1, $2, $3, $4, $5)';
-  const values = [name, category, phoneNumber, menu, photoUrl];
+  const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl", "featureOne", "featureTwo", "runningTime") VALUES($1, $2, $3, $4, $5, $6, $7, $8)';
 
   pool.query(query, values, (err) => {
     if (err) {
