@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 const { Pool } = require('pg');
-const connectionString = 'postgres://[your_connection_string_here]';
+const connectionString = 'postgres://zdtmglwuvutdbi:4fdad7a05817739192e79ea461b9cf6cb57305381be912fe52f459f11eb13686@ec2-3-230-24-12.compute-1.amazonaws.com:5432/d6jpb5mbc1nrop';
 
 const pool = new Pool({
   connectionString: connectionString,
