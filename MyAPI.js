@@ -42,7 +42,7 @@ app.post('/save_store', (req, res) => {
   const price = req.body.price.split(',');  
   const menuUrl = req.body.menuUrl.split(',');  
 
-  const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl", "featureOne", "featureTwo","address", "runningTime", price, "menuUrl") VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
+  const query = 'INSERT INTO raitto_store(name,"address", category, "phoneNumber", menu, "photoUrl", "featureOne", "featureTwo", "runningTime", price, "menuUrl") VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
 
   const values = [name, category, phoneNumber, menu, photoUrl, featureOne, featureTwo,address, runningTime, price, menuUrl];
 
