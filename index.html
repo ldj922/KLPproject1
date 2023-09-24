@@ -65,8 +65,8 @@
         <label for="phoneNumber">전화번호:</label>
         <input type="tel" id="phoneNumber" name="phoneNumber">
 
-        <label for="menu">메뉴 정보:</label>
-        <textarea id="menu" name="menu"></textarea>
+        <label for="menu">메뉴 정보(쉼표로 구분하여 입력):</label>
+        <textarea id="menu" name="menu" placeholder="메뉴정보나 개수에 상관없이 입력가능합니다.">
 
         <label for="photoUrl">사진 URL:</label>
         <input type="text" id="photoUrl" name="photoUrl">
@@ -77,8 +77,14 @@
         <label for="featureTwo">상세정보:</label>
         <input type="text" id="featureTwo" name="featureTwo">
 
-        <label for="runningTime">영업 시간:</label>
-        <textarea id="runningTime" name="runningTime"></textarea>
+        <label for="runningTime">영업 시간 (쉼표로 구분하여 입력해주세요):</label>
+        <textarea id="runningTime" name="runningTime" placeholder="월,화,수,목,금,토,일,시간대">
+
+        <label for="price">가격 (쉼표로 구분하여 입력해주세요):</label>
+        <input type="text" id="price" name="price" placeholder="10000,12000,15000">
+
+        <label for="menuUrl">메뉴 URL (쉼표로 구분하여 입력):</label>
+        <input type="text" id="menuUrl" name="menuUrl" placeholder="http://example1.com, http://example2.com">
 
         <input type="submit" value="저장합니다.">
     </form>

@@ -8,5 +8,7 @@ CREATE TABLE raitto_store (
     featureOne TEXT,
     featureTwo TEXT,
     runningTime TEXT[],
+    price TEXT[],
+    menuUrl TEXT[],
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

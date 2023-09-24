@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 const { Pool } = require('pg');
-const connectionString = 'postgres://zdtmglwuvutdbi:4fdad7a05817739192e79ea461b9cf6cb57305381be912fe52f459f11eb13686@ec2-3-230-24-12.compute-1.amazonaws.com:5432/d6jpb5mbc1nrop';
+const connectionString = 'postgres://[your_connection_string_here]';
 
 const pool = new Pool({
   connectionString: connectionString,
@@ -33,13 +33,17 @@ app.post('/save_store', (req, res) => {
   const name = req.body.name;
   const category = req.body.category;
   const phoneNumber = req.body.phoneNumber;
-  const menu = req.body.menu;
+  const menu = req.body.menu.split(',');
   const photoUrl = req.body.photoUrl;
   const featureOne = req.body.featureOne;
   const featureTwo = req.body.featureTwo; 
-  const runningTime = req.body.runningTime; 
+  const runningTime = req.body.runningTime.split(','); 
+  const price = req.body.price.split(',');  
+  const menuUrl = req.body.menuUrl.split(',');  
 
-  const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl", "featureOne", "featureTwo", "runningTime") VALUES($1, $2, $3, $4, $5, $6, $7, $8)';
+  const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl", "featureOne", "featureTwo", "runningTime", price, "menuUrl") VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)';
+
+  const values = [name, category, phoneNumber, menu, photoUrl, featureOne, featureTwo, runningTime, price, menuUrl];
 
   pool.query(query, values, (err) => {
     if (err) {
