@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
         input[type="tel"],
         textarea,
         input[type="file"],
-        input[type="text"] {
+        select {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -51,6 +52,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>정보 입력</h1>
     <form action="/save_store" method="post">
@@ -66,9 +68,9 @@
         <label for="menu">메뉴 정보:</label>
         <textarea id="menu" name="menu"></textarea>
 
-        <label for="photUrl">사진 URL 저장:</label>
+        <label for="photoUrl">사진 URL:</label>
         <input type="text" id="photoUrl" name="photoUrl">
-        
+
         <label for="featureOne">해시태그:</label>
         <input type="text" id="featureOne" name="featureOne">
 
@@ -93,11 +95,10 @@
     <button onclick="navigateToEndpoint('place_laundry')">빨래방 정보 보기</button>
 
     <script>
-        // 엔드포인트로 이동하는 JavaScript 함수를 정의합니다.
         function navigateToEndpoint(endpoint) {
-            // 각 버튼을 클릭할 때 해당 엔드포인트로 이동합니다.
             window.location.href = `https://raitto-8364e82bcabf.herokuapp.com/${endpoint}`;
         }
     </script>
 </body>
+
 </html>
