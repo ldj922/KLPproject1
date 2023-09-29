@@ -5,7 +5,7 @@ CREATE TABLE raitto_store (
     phoneNumber VARCHAR(255),
     menu TEXT[],
     photoUrl VARCHAR(255),
-    featureOne TEXT,
+    featureOne TEXT[],
     featureTwo TEXT,
     adress TEXT,
     runningTime TEXT[],
