@@ -35,16 +35,16 @@
     const phoneNumber = req.body.phoneNumber;
     const menu = req.body.menu.split(',').map(tag => tag.trim());;
     const photoUrl = req.body.photoUrl;
-    const featureOne = req.body.featureOne.split(',').map(tag => tag.trim());
     const featureTwo = req.body.featureTwo; 
     const storeAddress = req.body.storeAddress;
     const runningTime = req.body.runningTime.split(',').map(tag => tag.trim());; 
     const price = req.body.price.split(',').map(tag => tag.trim());;  
     const menuUrl = req.body.menuUrl.split(',').map(tag => tag.trim());;  
+    const featureOne = req.body.featureOne.split(',').map(tag => tag.trim());
 
-    const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl", "featureOne", "featureTwo", "storeAddress", "runningTime", price, "menuUrl") VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
+    const query = 'INSERT INTO raitto_store(name, category, "phoneNumber", menu, "photoUrl", "featureTwo", "storeAddress", "runningTime", price, "menuUrl", "featureOne") VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
 
-    const values = [name, category, phoneNumber, menu, photoUrl, featureOne, featureTwo, storeAddress, runningTime, price, menuUrl];
+    const values = [name, category, phoneNumber, menu, photoUrl, featureTwo, storeAddress, runningTime, price, menuUrl, featureOne];
 
     pool.query(query, values, (err) => {
       if (err) {
