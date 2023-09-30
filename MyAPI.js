@@ -30,6 +30,9 @@
   });
 
   app.post('/save_store', (req, res) => {
+
+    console.log(req.body); 
+
     const name = req.body.name;
     const category = req.body.category;
     const phoneNumber = req.body.phoneNumber;
