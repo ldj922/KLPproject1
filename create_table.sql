@@ -13,3 +13,16 @@ CREATE TABLE raitto_store (
     menuUrl TEXT[],
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE store_popularity (
+    store_id INT REFERENCES raitto_store(id),
+    count INT DEFAULT 1,
+    PRIMARY KEY (store_id)
+);
+
+CREATE TABLE user_search_history (
+    user_id INT,  
+    search_term VARCHAR(255),
+    count INT DEFAULT 1,
+    PRIMARY KEY (user_id, search_term)
+);
